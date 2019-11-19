@@ -11,7 +11,7 @@ void calculate_sum(char rev_num1[],char rev_num2[],char temporary_sum[],char rea
 void reverse_number(char num_to_reverse[], char reverse_store[]);
 void equalize_num(char lar_number[],char small_number[]);
 void calculate_negation(char rev_num1[],char rev_num2[],char temporary_sum[],char real_sum[]);
-void adder(char num1[],char num2[])
+void adder(char num1[],char num2[]);
 
 //Reverses the input numbers
 void reverse_number(char num_to_reverse[], char reverse_store[]){
