@@ -9,16 +9,9 @@ char reversed_sum[10000000];
 char large_num[1000000];
 void calculate_sum(char rev_num1[],char rev_num2[],char temporary_sum[],char real_sum[]);
 void reverse_number(char num_to_reverse[], char reverse_store[]);
-
-//Stores larger number
-void storeLargeNum(char givenNum[]){
-    for (int i = strlen(givenNum)-1; i >= 0; i--)
-    {  
-        large_num[i] = givenNum[i];
-       
-    }
-
-}
+void equalize_num(char lar_number[],char small_number[]);
+void calculate_negation(char rev_num1[],char rev_num2[],char temporary_sum[],char real_sum[]);
+void adder(char num1[],char num2[])
 
 //Reverses the input numbers
 void reverse_number(char num_to_reverse[], char reverse_store[]){
@@ -107,18 +100,7 @@ void calculate_negation(char rev_num1[],char rev_num2[],char temporary_sum[],cha
     reverse_number(temporary_sum,real_sum);
     printf("%s \n",real_sum);
 }
-//Remove -
-void sign_remover(char rev_num[]){
-   for (int i = strlen(rev_num)-1; i >= 0; i--)
-    {  
-        if (rev_num[i] == '-')
-        {
-          rev_num[i] = '0';
-        }
-        
-       
-    }
-}
+
 
 
 
@@ -168,7 +150,7 @@ void adder(char num1[],char num2[]){
         //equalizing the digits first
        equalize_num(reversed_num2,reversed_num1);
 
-         //Calculate sum
+        //Calculate sum
         calculate_sum(reversed_num1,reversed_num2,reversed_sum,sum);  
       }
       
