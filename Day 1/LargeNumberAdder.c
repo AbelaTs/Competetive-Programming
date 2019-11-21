@@ -14,7 +14,7 @@ char unsigned_num2[1000000];
 char temp_res[10000000];
 char signed_res[10000000];
 char larger_num[1000000];
-smaller_num[1000000];
+char smaller_num[1000000];
 
 void reverse_number(char num_to_reverse[], char reverse_store[]);
 void calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[],char real_result[]);
@@ -45,14 +45,14 @@ void calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[],char 
     int hold = 0;
     int temp_result = 0;
      //Calculate result
-    for (int i = 0; i < strlen(reversed_num1); i++)
+    for (int i = 0; i < strlen(rev_num1); i++)
     {
         int dig1 = rev_num1[i] - '0';
         int dig2 = rev_num2[i] - '0';
         temp_result =  dig1 + dig2 + hold;
         if (temp_result >= 10)
         {
-          if (reversed_num1[i+1] == '\0')
+          if (rev_num1[i+1] == '\0')
           {
               hold = 1;
               temp_result = temp_result - 10;
@@ -67,6 +67,7 @@ void calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[],char 
        
             
         }else{
+            hold = 0;
           temporary_result[i] = temp_result + '0';
         }
     }
