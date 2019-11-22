@@ -8,6 +8,8 @@
 
 char num1[1000000];
 char num2[1000000];
+char signed1[1000000];
+char signed2[1000000];
 char operator[1];
 void calculate(char num1[],char operator[],char num2[]){
     if (operator[0] == '+')
@@ -15,6 +17,11 @@ void calculate(char num1[],char operator[],char num2[]){
        addition_calculator(num1,num2);
     }else if(operator[0] == '*'){
         Multiply(num1,num2);
+    }else if(operator[0] == '-'){
+       
+        addSign(num2,signed2);
+        addition_calculator(num1,signed2);
+        
     }
     
 }
