@@ -6,6 +6,9 @@
 #include "../Day 1/LargeNumberAdder.c"
 #include "../Day 2/LargeNumberMultiplier.c"
 
+char num1[1000000];
+char num2[1000000];
+char operator[1];
 void calculate(char num1[],char operator[],char num2[]){
     if (operator[0] == '+')
     {
@@ -16,13 +19,10 @@ void calculate(char num1[],char operator[],char num2[]){
     
 }
 int main(){
-    char num1[1000000];
     printf("Hello. Please enter your first number?\n");
     scanf("%s", &num1);
-    char operator[1];
     printf("Hello. Please enter your operator as +,-,*,/ ?\n");
-    scanf("%s", &operator);
-    char num2[1000000];
+    scanf("%s", &operator);;
     printf("Please enter your second number?\n");
     scanf("%s", &num2);
     calculate(num1,operator,num2);
