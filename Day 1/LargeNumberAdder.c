@@ -5,16 +5,16 @@
 #include <stdbool.h>
 
 
-char reversed_num1[1000000];
-char reversed_num2[1000000];
-char result[10000000];
-char reversed_result[10000000];
-char unsigned_num1[1000000];
-char unsigned_num2[1000000];
-char temp_res[10000000];
-char signed_res[10000000];
-char larger_num[1000000];
-char smaller_num[1000000];
+char reversed_num1[1000000];// stores the reversed form of the input number
+char reversed_num2[1000000];// stores the reversed form of the input number
+char result[10000000];//stores the result
+char reversed_result[10000000];// stores the reversed form of the sum
+char unsigned_num1[1000000];// stores the number after the -ve sign is removed
+char unsigned_num2[1000000];// stores the number after the -ve sign is removed
+char temp_res[10000000];//used to store number temporarily
+char signed_res[10000000];//stores a negative form of a number
+char larger_num[1000000];//stores the larger number after comparing
+char smaller_num[1000000];// stores the smaller number after comparing
 
 void reverse_number(char num_to_reverse[], char reverse_store[]);
 void calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[],char real_result[]);
@@ -24,7 +24,7 @@ void remove_sign(char num[],char new_num[]);
 void removePreZeros(char num[],char res[]);
 void addSign(char num[],char res[]);
 void compare(char num1[],char num2[],char larger_num[],char smaller_num[]);
-void calculator(char num1[],char num2[]);
+void addition_calculator(char num1[],char num2[]);
 
 //Reverses the input numbers
 void reverse_number(char num_to_reverse[], char reverse_store[]){
@@ -267,8 +267,8 @@ void compare(char num1[],char num2[],char larger_num[],char smaller_num[]){
 
 
 
-//Two integer adders
-void calculator(char num1[],char num2[]){
+//Two integer adder
+void addition_calculator(char num1[],char num2[]){
 
     //If both numbers have equal size 
     if(strlen(num1) ==  strlen(num2)){
@@ -480,22 +480,22 @@ void calculator(char num1[],char num2[]){
 }
 
 
-int main(){
-    char num1[1000000];
-    printf("Hello. Please enter your first number?\n");
-    scanf("%s", &num1);
-    char num2[1000000];
-    printf("Please enter your second number?\n");
-    scanf("%s", &num2);
-    calculator(num1,num2);
+// int main(){
+//     char num1[1000000];
+//     printf("Hello. Please enter your first number?\n");
+//     scanf("%s", &num1);
+//     char num2[1000000];
+//     printf("Please enter your second number?\n");
+//     scanf("%s", &num2);
+//     addition_calculator(num1,num2);
    
    
-   return 0;
+//    return 0;
    
 
 
    
-}
+// }
 
 
 

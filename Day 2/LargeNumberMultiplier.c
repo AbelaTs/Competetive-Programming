@@ -10,19 +10,19 @@ char sum[1000000000];//stores the sum of each product
 char existing_product[1000000];//stores the existing product
 char* temp_holder;// temporary storage
 char* reversed_product; // stores the reversed form of each product 
-char reversed_num1[1000000]; //stores the reversed form of the user input
-char reversed_num2[1000000];//stores the reversed form of the user input
+char mul_reversed_num1[1000000]; //stores the reversed form of the user input
+char mul_reversed_num2[1000000];//stores the reversed form of the user input
 char list_reversed_sum[1][1000000000];//stores the reversed form sum of products
 //Methods
-void reverse_number(char num_to_reverse[], char reverse_store[]); // Reverses numbers
-void equalize_num(char lar_number[],char small_number[]);// Equalizes digits
-void calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[]);//Calculates the sum of two numbers
+void mul_reverse_number(char num_to_reverse[], char reverse_store[]); // Reverses numbers
+void mul_equalize_num(char lar_number[],char small_number[]);// Equalizes digits
+void mul_calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[]);//Calculates the sum of two numbers
 void digitWithNumber_multiplier(char num1, char reversed2[]);//Multiplies a single digit with the entire number
 void Multiply(char num1[],char num2[]);//Multiplies the two numbers and prints out the result
 
 
 //Calculates the result
-void calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[]){
+void mul_calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[]){
     int hold = 0;
     int temp_result = 0;
      //Calculate result
@@ -57,7 +57,7 @@ void calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[]){
     
 }
 //method to equalize two unequal numbers with different number of digits
-void equalize_num(char lar_number[],char small_number[]){
+void mul_equalize_num(char lar_number[],char small_number[]){
     for (int count = 0; count < strlen(lar_number); count++)
     {
       if (small_number[count] == '\0')
@@ -70,7 +70,7 @@ void equalize_num(char lar_number[],char small_number[]){
 }
 
 //Reverses the input numbers
-void reverse_number(char num_to_reverse[], char reverse_store[]){
+void mul_reverse_number(char num_to_reverse[], char reverse_store[]){
        //reversing the numbers
     int x = 0;
     for (int i = strlen(num_to_reverse)-1; i >= 0; i--)
@@ -150,7 +150,7 @@ void digitWithNumber_multiplier(char num1, char reversed2[])
      
     
     //Reversing the numbers so they could be indented correctly
-    reverse_number(reversed_product,temp_holder);
+    mul_reverse_number(reversed_product,temp_holder);
     
     //Indenting the products after the first product
     for (int i = 0; i < indentation_counter; i++)
@@ -168,13 +168,13 @@ void digitWithNumber_multiplier(char num1, char reversed2[])
     }
     
 
-    reverse_number(temp_holder,reversed_product);
+    mul_reverse_number(temp_holder,reversed_product);
    
 
    if (strlen(reversed_product) >strlen(existing_product))
     {
         //Equalize the digits along with the indentation
-         equalize_num(reversed_product,existing_product);
+         mul_equalize_num(reversed_product,existing_product);
          
          
           
@@ -182,7 +182,7 @@ void digitWithNumber_multiplier(char num1, char reversed2[])
     
     
     //Add them
-    calculate_sum(reversed_product,existing_product,sum);
+    mul_calculate_sum(reversed_product,existing_product,sum);
     
 
     //Store the sum
@@ -210,16 +210,16 @@ void digitWithNumber_multiplier(char num1, char reversed2[])
 
 //Multiplies two numbers
 void Multiply(char num1[],char num2[]){
-    reverse_number(num1,reversed_num1);
-    reverse_number(num2,reversed_num2);
-    for (int i = 0; i < strlen(reversed_num1); i++)
+    mul_reverse_number(num1,mul_reversed_num1);
+    mul_reverse_number(num2,mul_reversed_num2);
+    for (int i = 0; i < strlen(mul_reversed_num1); i++)
     {
         
-        digitWithNumber_multiplier(reversed_num1[i],reversed_num2);
+        digitWithNumber_multiplier(mul_reversed_num1[i],mul_reversed_num2);
     }
 
     //Fetching the final product and reverting back to its correct form
-    reverse_number( list_reversed_sum[0],temp_holder);
+    mul_reverse_number( list_reversed_sum[0],temp_holder);
     printf("Product :%s \n",temp_holder);
    
     indentation_counter = 0;
@@ -227,7 +227,13 @@ void Multiply(char num1[],char num2[]){
      
 	
 }
-int main(){
-    Multiply("18020","18020");
+// int main(){
+//       char num1[1000000];
+//     printf("Hello. Please enter your first number?\n");
+//     scanf("%s", &num1);
+//     char num2[1000000];
+//     printf("Please enter your second number?\n");
+//     scanf("%s", &num2);
+//      Multiply(num1,num2);
     
-}
+//}
