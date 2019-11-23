@@ -40,7 +40,7 @@ void reverse_number(char num_to_reverse[], char reverse_store[]){
     }
 }
 
-//Calculates the result
+//adds two integers and return their sum
 void calculate_sum(char rev_num1[],char rev_num2[],char temporary_result[],char real_result[]){
     int hold = 0;
     int temp_result = 0;
@@ -263,11 +263,7 @@ void compare(char num1[],char num2[],char larger_num[],char smaller_num[]){
     
 }
 
-
-
-
-
-//Two integer adder
+//Major function which does all the calculation by using all the methods above
 void addition_calculator(char num1[],char num2[]){
 
     //If both numbers have equal size 
