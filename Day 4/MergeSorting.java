@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class MergeSorting{
+
+    // merges the two half parst of the list into one list in an increasing order manner
     public static int[] merge(int[] left_list,int[] right_list){
         int merge_list_length = left_list.length + right_list.length;
         int[] merge_list = new int[merge_list_length];
@@ -46,6 +48,7 @@ public class MergeSorting{
         return merge_list;
     }
 
+    // sorts a gien list in an increasing order
     public static int[] mergeSort(int[] list){
         int[] left_list = Arrays.copyOfRange(list,0,list.length/2);
         int[] right_list = Arrays.copyOfRange(list,list.length/2,list.length);
