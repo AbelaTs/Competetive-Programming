@@ -64,8 +64,31 @@ public class MergeSorting{
 
     }
 
+        //Generates random numbers from up to the given numbers with no duplicates 
+        public static int[] randomGenerator(int size){
+            Random random = new Random();
+            int counter = 0;
+            int generatod;
+            int[] random_generatod = new int[size];
+            HashMap map = new HashMap<Integer,Integer>();
+            while(counter < size){
+                Integer num = random.nextInt(size+1);
+                if(!map.containsKey(num)){
+                    map.put(num,num);
+                    random_generatod[counter] = num;
+                    counter++;
+    
+                }
+                
+                
+                
+            }
+            return random_generatod;
+            
+        }
+
     public static void main(String args[]){
-        int[] list = {5,8,9,3,6};
+        int[] list = randomGenerator(10000);
         int[] result = mergeSort(list);
         for(int i = 0; i<result.length; i++){
             System.out.println(result[i]);
