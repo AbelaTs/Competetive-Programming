@@ -3,38 +3,40 @@ import java.util.HashMap;
 import java.util.Random;
 public class QuickSorting{
     static int pivot ;
+    static int[] given_list;
     static int new_pivot;
     static int temp_holder;
     static int left_pivot_marker;
     static int right_pivot_marker;
 
-    public static int[] quick_sort(int[] list){
-        pivot = list.length - 1;
-        left_pivot_marker = 0;
-        right_pivot_marker = pivot - 1;
-      
-        if(list.length == 1){
-            return list;
-        }
-        while(left_pivot_marker <= right_pivot_marker){
-            //when it reaches the pivot
-        if(left_pivot_marker >= right_pivot_marker){
-                temp_holder = list[pivot];
-                list[pivot] = list[left_pivot_marker];
-                list[left_pivot_marker] = temp_holder;
-                new_pivot = left_pivot_marker;
-               
-            
-            }
+    public static int quick_sort(int initial,int end){
 
-            if(list[left_pivot_marker] <= list[pivot]){
+        left_pivot_marker = initial;
+        right_pivot_marker = end;
+        pivot = end;
+        
+        while(left_pivot_marker <= right_pivot_marker){
+            
+            //when it reaches the pivot
+        if(left_pivot_marker == right_pivot_marker){
+                temp_holder = given_list[pivot];
+                given_list[pivot] = given_list[left_pivot_marker];
+                given_list[left_pivot_marker] = temp_holder;
+                new_pivot = left_pivot_marker;
+                left_pivot_marker++;
+            }else{
+
+            if(given_list[left_pivot_marker] <= given_list[pivot]){
                 left_pivot_marker++;
                 
             }else{
-                if(list[right_pivot_marker] <= list[pivot]){
-                    temp_holder = list[left_pivot_marker];
-                    list[left_pivot_marker] = list[right_pivot_marker];
-                    list[right_pivot_marker] = temp_holder;
+                if(given_list[right_pivot_marker] < given_list[pivot]){
+                    temp_holder = given_list[left_pivot_marker];
+                    
+                    given_list[left_pivot_marker] = given_list[right_pivot_marker];
+                    
+                    given_list[right_pivot_marker] = temp_holder;
+                   
                     left_pivot_marker ++;
                     
                   
@@ -42,9 +44,10 @@ public class QuickSorting{
                     right_pivot_marker--;
                 }
           }
+        }
 
         }
-       return list;
+       return new_pivot;
     
     }
 
@@ -87,12 +90,30 @@ public class QuickSorting{
         
     }
 
+    public static int Q_sort(int start,int end){
+        int new_p = quick_sort(start,end); 
+        if(new_p-1 != 0){
+            Q_sort(0,new_p-1);
+            Q_sort(new_p+1,given_list.length);
+            
+        }
+        
+        
+        return 0;
+        
+    }
+    
 
     public static void main(String args[]){
-        int[] list = {35};
-        int[] result = quick_sort(list);
-        for(int i= 0; i<result.length;i++){
-            System.out.println(result[i]);
-        } 
+        
+       
+        int[] list = {35,33,45,67,89,24,31};
+        given_list = list;
+      
+        Q_sort(0,given_list.length - 1);
+        for(int i=0; i<given_list.length;i++){
+            System.out.println(given_list[i]);
+        }
+        
     }
 }
