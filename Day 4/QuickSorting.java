@@ -90,12 +90,14 @@ public class QuickSorting{
         
     }
 
+    //Sorts
     public static int Q_sort(int start,int end){
-        int new_p = quick_sort(start,end); 
-        if(new_p-1 != 0){
-            Q_sort(0,new_p-1);
-            Q_sort(new_p+1,given_list.length);
-            
+        int new_p = quick_sort(start,end); //Pivot
+        int left_end = new_p-1;
+        int right_start = new_p+1; 
+        if(start < end){
+            Q_sort(start,left_end);//sort from start to pivot
+            Q_sort(right_start,end);// sort from pivot to end
         }
         
         
@@ -107,7 +109,7 @@ public class QuickSorting{
     public static void main(String args[]){
         
        
-        int[] list = {35,33,45,67,89,24,31};
+        int[] list = randomGenerator(1000000);
         given_list = list;
       
         Q_sort(0,given_list.length - 1);
