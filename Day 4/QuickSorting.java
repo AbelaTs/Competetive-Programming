@@ -9,6 +9,7 @@ public class QuickSorting{
     static int left_pivot_marker;
     static int right_pivot_marker;
 
+    //Returns the pivot
     public static int quick_sort(int initial,int end){
 
         left_pivot_marker = initial;
@@ -49,22 +50,6 @@ public class QuickSorting{
         }
        return new_pivot;
     
-    }
-
-    public static int[] merge(int[] left, int[] right){
-        int[] result = new int[left.length + right.length];
-        int counter = 0;
-     
-            for(int i = 0; i < left.length; i++){
-                result[counter] = left[i];
-                counter++;
-            }
-            for(int j = 0; j < right.length; j++){
-                result[counter] = right[j];
-                counter++;
-            }
-        
-        return result;
     }
     
      //Generates random numbers from up to the given numbers with no duplicates 
