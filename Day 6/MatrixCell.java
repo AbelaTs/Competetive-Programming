@@ -1,63 +1,74 @@
-class Solution {
-    int[][] result;
-    int[][] matrix_values;
-    public int[][] allCellsDistOrder(int R, int C, int r0, int c0) {
+import java.util.Arrays;
+import java.util.HashMap;
+class MatrixCell {
+    static int[][] result;//stores the final result after sorted
+    static int[][] matrix_values;// stores each coordinates of the matrix
+    //Insertion sort
+    public static void sort(int[][] list){
+        int[] temp_holder; // temorarily holds data
+        for(int index = 1; index < list.length;index++){
+            int counter = index;
+            int i_count = 0;
+            while(counter > 0){
+                if(list[counter][i_count]<list[counter-1][i_count]){
+                    temp_holder = list[counter-1];
+                    list[counter-1] = list[counter];
+                    list[counter] = temp_holder;
+                    counter--;
+                }else{
+                    break;
+                }
+            }
+        }
+       
+    }
+
+    public static int[][] allCellsDistOrder(int R, int C, int r0, int c0) {
         result = new int[R*C][2];
+        int[][] sum_index = new int[R*C][2];
         matrix_values = new int[R*C][2];
         int[] given = new int[]{r0,c0};
-        int[] sum_list = new int[R*C];
-        int[] index_order = new int[R*C];
-        int sum_counter = 0;
         int result_counter = 0;
-        HashMap sum_order = new HashMap<Integer,Integer>();
-        int sum = 0;
-        
+        int sum = 0; // stores distance of each coordinate
+        int counter = 0;
         // getting each matrix values
         for(int i=0; i < R;i++){
             for(int j=0; j<C;j++){
-               matrix_values[j] = new int[]{i,j};
+               matrix_values[counter] = new int[]{i,j};
+               counter++;
+               
             }
+           
         }
         
         //Storing each index distance
-        
-        for(int i=0; i<R; i++){
-            for(int j=0; j<C;j++){
-               sum += Math.abs(given[j] - matrix_values[i][j]);  
+        int count = 0;
+        for(int i=0; i < matrix_values.length; i++){
+            sum = 0;
+            
+            for(int j=0; j<2;j++){
+               
+               sum += Math.abs(given[j] - matrix_values[count][j]);  
             }
-            sum_order.put(i,sum);
+            sum_index[count] = new int[]{sum,count};
+            count++;
         }
-        
-        //Makint the sum list
-        for(Object value : sum_order.values()){
-            int s = (int) value;
-            sum_list[sum_counter] = s;
-            sum_counter++;     
+        //Sort the index with respect to the their sum
+        sort(sum_index);
+
+
+        //Adding each coordinate to the final result array according to their index
+         for(int i=0; i < sum_index.length;i++){
+                int index = sum_index[i][1];
+               result[i] = matrix_values[index];
         }
-        Arrays.sort(sum_list);
-        //putting index in order
-        for(int i=0; i< sum_list.length; i++){
-            for(Object key : sum_order.keySet()){
-                int value = (int) sum_order.get(key);
-                if(value == sum_list[i]){
-                    int index = (int) key;
-                    index_order[i] = index; 
-                } 
-            }
-        }
-        
-        //
-         for(int i=0; i < R;i++){
-            for(int j=0; j<C;j++){
-                int index = index_order[j];
-               result[j] = matrix_values[index];
-            }
-        }
-        
-        
-        
+
      
         
         return result;
+    }
+   
+    public static void main(String args[]){
+       int[][] list =  allCellsDistOrder(2,3,1,2);
     }
 }
