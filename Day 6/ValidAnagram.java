@@ -13,11 +13,6 @@ class ValidAnagram {
                 if(string1.contains(t.charAt(i))){
                     int index = string1.indexOf(t.charAt(i));
                     string1.remove(index);
-                    // if(!already_checked.contains(j)){
-                    //     match_counter++;
-                    //     already_checked.add(j);
-                    //     break;
-                    // }
                 }
             
         }

@@ -21,6 +21,7 @@ class Solution {
                 rep_counter.put(arr1[j],1);
              }
         }
+        
         int[] result = new int[arr1.length];
       
         int unique_length = 0;
