@@ -1,3 +1,4 @@
+//Not finished.. only left with Division
 //Author : Abel Tsegaye
 #include <stdio.h>
 #include <stdlib.h>
