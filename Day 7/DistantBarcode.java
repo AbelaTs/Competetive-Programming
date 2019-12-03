@@ -22,7 +22,9 @@ class DistantBarcode{
                 barcode.remove(counter);
                 counter = 0;
             }else{
-                
+                if(barcodes.length % 2 !=0){
+                    
+                }
                 counter++;
             }
         }
