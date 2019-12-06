@@ -1,12 +1,12 @@
 
  //Definition for singly-linked list.
-  public class ListNode {
+class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
  }
  
-class MergeSortedList{
+public class MergeSortedList{
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);
         ListNode start = new ListNode(0);
