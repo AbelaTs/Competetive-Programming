@@ -4,37 +4,52 @@ import java.util.*;
 class DistantBarcode{
     public static int[] rearrangeBarcodes(int[] barcodes) {
         ArrayList<Integer> barcode = new ArrayList<Integer>();
-        CStack result = new CStack();
         int[] final_result = new int[barcodes.length];
-        int
-
+        CStack result = new CStack();
+        
+        
+        //adding  members to the arraylist
         for(int i = 0; i<barcodes.length; i++){
             barcode.add(barcodes[i]);
+            
+          
         }
-        int counter = 0;
+        
+        //Rearranging the numbers and adding to the final result
+        int count = 0;
 
         while(!barcode.isEmpty()){
+           // if(count ==  barcode.size()){
+           //      count = 0;
+           //  }
             if(result.isEmpty()){
-                result.push(barcode.get(counter));
-                barcode.remove(counter);
-            }else if(result.peek() != barcode.get(counter)){
-                result.push(barcode.get(counter));
-                barcode.remove(counter);
-                counter = 0;
-            }else{
-                if(barcodes.length % 2 !=0){
-                    
+                result.push(barcode.get(count));
+                barcode.remove(count);
+               
+            }else if(result.peek() != barcode.get(count)){
+               
+                result.push(barcode.get(count));
+                barcode.remove(count);
+                 count=0;
+            }else if(result.peek() == barcode.get(count)){
+                if(barcode.size() == 1){
+                   
+                     result.addFirst(barcode.get(count));
+                     barcode.remove(count);
+                }else{
+                count++;
                 }
-                counter++;
             }
+             
         }
         //putting the result into the final array
         for(int i=0; i<final_result.length;i++){
             final_result[i] = result.pop();
         }
 
-        return final_result;
 
+
+        return final_result;
     }
     public static void main(String args[]){
         int[] list = {2,1,1};
