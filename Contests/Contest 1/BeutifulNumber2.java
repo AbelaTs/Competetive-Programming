@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class BeutifulNumber2{
-    public static int[] beutifulMaker(int[] list){
-        int[] result = new int[list.length];
+    public static String beutifulMaker(int[] list){
+        StringBuilder result = new StringBuilder();
         
         int[] index_holder = new int[list.length];
         for(int i = 0; i < list.length; i++){
@@ -21,14 +21,14 @@ public class BeutifulNumber2{
             
             if(max - min == i){
                 
-                result[i] = 1;
+                result.append("1");
             }else{
-                result[i] = 0;
+                result.append("0");
             }
         }
 
         
-        return result;
+        return result.toString();
     }
 
      //Takes string input and prints out the final result in string form
@@ -38,13 +38,8 @@ public class BeutifulNumber2{
         for(int i = 0; i<s_num.length; i++){
             input_num[i] = Integer.parseInt(s_num[i]);
         }//Convert given string to int array
-        int[] result = beutifulMaker(input_num);
-        String result_string = "";
-        for(int i = 0; i < result.length; i++){
-            result_string += Integer.toString(result[i]);
-        }//Convert result to string
-
-        return result_string;
+        String result = beutifulMaker(input_num);
+        return result;
     }
 
     public static void main(String[] args) {
