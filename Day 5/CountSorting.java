@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 public class CountSorting{
-    public static int[] countSort(int[] list){
+    public static void countSort(int[] list){
         int counter = 0;
         //finding the largest number
         int largest = list[0];
@@ -31,7 +31,7 @@ public class CountSorting{
                 count_sort[j]--;
             }
         }
-        return list;
+        
     }
          //Generates random numbers from up to the given numbers with no duplicates 
          public static int[] randomGenerator(int size){
