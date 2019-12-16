@@ -12,20 +12,21 @@ import org.graalvm.compiler.nodes.spi.NodeValueMap;
 class InsertionSortLinkList {
     public ListNode insertionSortList(ListNode head) {
 
-        ArrayList<Integer> node_values = new ArrayList<Integer>();
+        ArrayList<Integer> node_values = new ArrayList<Integer>();// array-list to store each node values
         ListNode sorted_head = new ListNode(0);
         ListNode start = new ListNode(0);
         start.next = sorted_head;
         if(head != null){
             while(head != null){
-                node_values.add(head.val);
+                node_values.add(head.val);// storing the node values
                 head = head.next;
             }
+
             int[] sorted_node_values = new int[node_values.size()];
             for(int i = 0; i < node_values.size(); i++){
                 sorted_node_values[i] = node_values.get(i);
             }
-            sort(sorted_node_values);
+            sort(sorted_node_values);// sorting node values using insertion sort
  
             //Creating the linked list
             for(int i = 0; i < sorted_node_values.length; i++){

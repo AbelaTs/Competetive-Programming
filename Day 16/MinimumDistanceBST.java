@@ -11,16 +11,16 @@ class MinimumDistanceBST {
     public static int minDiffInBST(TreeNode root) {
         if(root != null){
             ArrayList<Integer> values = new ArrayList<Integer>();
-             findMin(root,values);
+             findMin(root,values);// get node values
              
-             int[] result = new int[values.size()];
+             int[] result = new int[values.size()]; // convert the array list to normal array
              for(int i = 0; i < values.size(); i++){
                  result[i] = (int) values.get(i);
              }
-             result = mergeSort(result);
+             result = mergeSort(result);// sort the given array with merge sort
              int min = result[1] - result[0];
  
-             for(int i=0; i<result.length-1; i++){
+             for(int i=0; i<result.length-1; i++){// Iterate through the sorted list with comparision of their difference
                  if(result[i+1] - result[i] < min){
                      min = result[i+1] - result[i];
                  }
@@ -93,7 +93,7 @@ class MinimumDistanceBST {
 
     }
 
-    //Recurseive function to get the difference between each different node
+    //Recurseive function to get the value of each different node
     public static TreeNode findMin(TreeNode root,ArrayList<Integer> list){
         if(root != null){
             list.add(root.val);
