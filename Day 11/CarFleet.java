@@ -17,7 +17,7 @@ public class CarFleet {
               
           }
           if(position.length != 0){
-              position = mergeSort(position);
+              position = mergeSort(position);//sort the posititions in decreasing order
           }
          
              
@@ -41,7 +41,7 @@ public class CarFleet {
               if(check_fleet.length != 0){
               Double slowest_car_time = check_fleet[0][0];
               Double slowest_car = check_fleet[0][1];
-                  for(int i = 1; i< position.length; i++){
+              for(int i = 1; i< position.length; i++){
                       
                       if(slowest_car_time >= check_fleet[i][0] ){
                          
