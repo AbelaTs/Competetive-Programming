@@ -2,8 +2,7 @@ import java.io.*;
 import java.util.*; 
 class ValidAnagram {
     public static boolean isAnagram(String s, String t) {
-        int match_counter = 0;
-        ArrayList<Integer> already_checked = new ArrayList<Integer>(); 
+        
         ArrayList<Character> string1 = new ArrayList<Character>();
         for(int j=0; j<s.length();j++){
            string1.add(s.charAt(j));
