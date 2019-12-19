@@ -7,7 +7,7 @@
      TreeNode(int x) { val = x; }
 }
 
-class Solution {
+class FindBottomLeft {
     static int node_value;
     static int curr_row; 
     public int findBottomLeftValue(TreeNode root) {
