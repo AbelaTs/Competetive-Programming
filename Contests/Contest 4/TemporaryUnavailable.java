@@ -10,7 +10,7 @@ public class TemporaryUnavailable{
         return e1 - s1 -dis;
 
     }
-    
+     
     public static void main(String[] args) {
         Scanner scanner  = new Scanner(System.in);
         int iterator = scanner.nextInt();
