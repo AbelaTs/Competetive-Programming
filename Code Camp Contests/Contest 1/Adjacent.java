@@ -1,32 +1,83 @@
+import java.util.ArrayList;
 
 public class Adjacent {
     public String removeDuplicates(String s, int k) {
-        int counter = 0;
-        boolean found_dup = false;
-        while(counter < s.length()){
-            found_dup = false;
-            if(counter+k <= s.length()){
-                if(checkDuplicate(s.substring(counter,counter+k))){ 
-                    s = s.substring(0,counter)+s.substring(counter+k);
-                    found_dup = true;
-                }
-            }
-            if(found_dup){
-                counter = 0;
+        Character[] crs = new Character[s.length()];
+        CStack stack = new CStack();
+        for(int i = 0; i < s.length(); i++){
+            crs[i] = s.charAt(i);
+        }
+        //remove duplicates using stack
+        for(int i = s.length()-1; i >= 0;i--){
+            Node node = new Node(crs[i],1);
+            if(!stack.isEmpty()){
+                Node nde = stack.peek();
+                if(nde.getChar() == crs[i]){
+                    nde.increaseCount();
+                    if(nde.getCount() == k){
+                        stack.pop();
+                    }
+                }else{
+                    stack.push(node);
+                 }
             }else{
-                counter++;
-             }
+                stack.push(node);
+            }
         }
+        //
+        String res = "";
+        while(!stack.isEmpty()){
+            Node node = stack.pop();
+            for(int i = 0; i < node.getCount(); i++){
+                 res += Character.toString(node.getChar());
+            }
+        }
+        return res;
 
-        return s;
+       
+
     }
-    public boolean checkDuplicate(String s){
-        for(int i = 0; i < s.length() -1; i++){
-            if(s.charAt(i) != s.charAt(i+1)){
-                return false;
-            }            
+}
+class Node{
+    static char character;
+    static int count;
+    public Node(char cr,int cnt){
+            character = cr;
+            count = cnt;
         }
-        return true;
+    public char getChar(){
+        return character;    
+    }
+    public int getCount(){
+        return count;
+    }
+    public void increaseCount(){
+        count++;
+    }
+}
+//Custom stack
+class CStack{
+    ArrayList<Node> stack;
+    public CStack(){
+        stack = new ArrayList<Node>();
+    }
+    public Node pop(){
+        Node num = stack.get(stack.size() - 1);
+        stack.remove(stack.size() - 1);
+        return num;
+    }
+    public void push(Node c){
+        stack.add(c);
+    }
+    public Node peek(){
+        Node num =  stack.get(stack.size() - 1);
+        return num;
+    }
+    public boolean isEmpty(){
+        return stack.isEmpty();
+    }
+    public void addFirst(int num){
+        
     }
 }
         
