@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 class FindCommonCharacters {
     public List<String> commonChars(String[] A) {
         HashMap<Character,Integer> check = new HashMap<Character,Integer>();
