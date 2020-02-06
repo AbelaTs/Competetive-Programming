@@ -1,4 +1,4 @@
-class Solution {
+class UniquePath {
     public int uniquePaths(int m, int n) {
         int[][] matrix = new int[n][m];
         //Initializing the border values with 1
