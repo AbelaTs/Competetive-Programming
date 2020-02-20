@@ -1,3 +1,6 @@
+import java.util.Iterator;
+import java.util.PriorityQueue;
+
 class SquareOfSored {
     public int[] sortedSquares(int[] A) {
         PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>();
