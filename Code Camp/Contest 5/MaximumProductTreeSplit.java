@@ -1,7 +1,5 @@
 //https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
 import java.util.ArrayList;
-
-
 // Definition for a binary tree node. 
 class TreeNode { int val; TreeNode
  left; TreeNode right; TreeNode(int x) { val = x; } }
@@ -18,10 +16,7 @@ class MaximumProductTreeSplit {
                 max_product = prod;
             }
         }
-        
         return (int)(max_product % (1000000007));
-        
-        
     }
     public int getSum(TreeNode root,ArrayList<Integer> list){
         if(root.left == null && root.right == null){
