@@ -1,3 +1,4 @@
+//https://leetcode.com/contest/weekly-contest-169/problems/find-n-unique-integers-sum-up-to-zero/
 class FindUniqueNumbersSumZero {
     public int[] sumZero(int n) {
         int[] res = new int[n];

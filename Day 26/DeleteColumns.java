@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/delete-columns-to-make-sorted/
 class DeleteColumns {
     public int minDeletionSize(String[] A) {
         int counter = 0;

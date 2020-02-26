@@ -1,4 +1,4 @@
-//Question : https://leetcode.com/problems/play-with-chips/submissions/
+// https://leetcode.com/problems/play-with-chips/submissions/
 class PlayingChips {
     public int minCostToMoveChips(int[] chips) {
         int odd = 0;

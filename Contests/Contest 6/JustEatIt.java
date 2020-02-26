@@ -1,4 +1,4 @@
-import java.security.DrbgParameters.Reseed;
+//https://codeforces.com/contest/1285/problem/B
 import java.util.Scanner;
 import java.util.Arrays;
 public class JustEatIt{

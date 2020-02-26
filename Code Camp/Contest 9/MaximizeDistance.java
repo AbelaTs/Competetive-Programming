@@ -1,3 +1,4 @@
+//https://leetcode.com/contest/weekly-contest-88/problems/maximize-distance-to-closest-person
 import java.util.ArrayList;
 
 class MaximizeDistance {

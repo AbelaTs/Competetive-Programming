@@ -1,3 +1,4 @@
+//http://codeforces.com/problemset/problem/1/A
 import java.util.Scanner;
 public class TheatreSquare{
     static Long width_num = 0L;

@@ -1,3 +1,8 @@
+//https://leetcode.com/problems/is-graph-bipartite/
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Stack;
+
 class GraphBipertite {
     public boolean isBipartite(int[][] graph) {
         ArrayList<Integer> node_list = new ArrayList<Integer>();

@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/first-bad-version/
 public class FirstBadVersion {
      int firstBad;
      int res = 1;

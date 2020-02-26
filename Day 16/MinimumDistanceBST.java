@@ -1,6 +1,9 @@
+//https://leetcode.com/problems/minimum-distance-between-bst-nodes/
+import java.util.ArrayList;
+import java.util.Arrays;
 
 // Definition for a binary tree node.
-  public class TreeNode {
+class TreeNode {
         int val;
       TreeNode left;
       TreeNode right;

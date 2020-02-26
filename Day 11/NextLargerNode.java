@@ -1,7 +1,5 @@
+//https://leetcode.com/problems/next-greater-node-in-linked-list/
 import java.util.ArrayList;
-
-import org.graalvm.compiler.core.gen.NodeLIRBuilder;
-
 public class NextLargerNode {
     public int[] nextLargerNodes(ListNode head) {
     

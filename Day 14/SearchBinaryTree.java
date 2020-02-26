@@ -1,12 +1,12 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
+//https://leetcode.com/problems/search-in-a-binary-search-tree/
+//Definition for a binary tree node.
+class TreeNode {
+     int val;
+     TreeNode left;
+     TreeNode right;
+     TreeNode(int x) { val = x; }
+ }
+ 
 class SearchBinaryTree {
     public TreeNode searchBST(TreeNode root, int val) {
         if(root == null){

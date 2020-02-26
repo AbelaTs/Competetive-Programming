@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
 class FindSmallestDivisor {
     public int smallestDivisor(int[] nums, int threshold) {
         int left = 1;

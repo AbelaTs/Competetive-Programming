@@ -1,3 +1,5 @@
+//https://codeforces.com/contest/1303/problem/B
+//Not finished
 import java.util.Scanner;
 
 public class NationalProject{

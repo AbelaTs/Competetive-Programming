@@ -1,3 +1,4 @@
+//http://codeforces.com/contest/1272/problem/B
 import java.util.HashMap;
 import java.util.Scanner;
 

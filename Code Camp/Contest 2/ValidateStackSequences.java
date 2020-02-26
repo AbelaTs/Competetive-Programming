@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/validate-stack-sequences/
 import java.util.ArrayList;
 
 class ValidateStackSequences {

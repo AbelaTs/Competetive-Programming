@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/distant-barcodes/
 //Not finished yet
 import java.io.*; 
 import java.util.*; 

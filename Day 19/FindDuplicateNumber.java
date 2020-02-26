@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/find-the-duplicate-number/
 class FindDuplicateNumber {
     public int findDuplicate(int[] nums) {
         int duplicate = 0;

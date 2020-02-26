@@ -1,3 +1,4 @@
+//https://leetcode.com/contest/weekly-contest-169/problems/verbal-arithmetic-puzzle/
 import java.util.ArrayList;
 import java.util.HashMap;
 

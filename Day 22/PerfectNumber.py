@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/perfect-number/
 class Solution(object):
     def checkPerfectNumber(self, num):
         divisors = []

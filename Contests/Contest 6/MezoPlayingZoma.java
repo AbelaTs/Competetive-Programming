@@ -1,3 +1,4 @@
+//https://codeforces.com/contest/1285/problem/A
 import java.util.Scanner;
 public class MezoPlayingZoma{
     public static int get_positions(String input){

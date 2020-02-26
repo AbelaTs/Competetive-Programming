@@ -1,3 +1,4 @@
+//https://leetcode.com/contest/weekly-contest-169/problems/all-elements-in-two-binary-search-trees/
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,37 +36,4 @@ class Solution {
         }
         
     }
-//     public static void countSort(ArrayList<Integer> list){
-        
-//         //finding the largest number
-//         int largest = list.get(0);
-//         for(int i=0; i<list.size(); i++){
-//             if(list.get(i) > largest){
-//                 largest = list.get(i);
-//             }
-//         }
-        
-//         //Setting the counting array
-//         ArrayList<Integer> count_sort = new ArrayList<Integer>();
-//         for (int x=0; x < largest+1; x++){
-//             count_sort.add(0);
-//         }
-//         //Counting occurance of each member
-//         for(int y=0; y<list.size(); y++){
-//             count_sort.set(list.get(y),count_sort.get(list.get(y))+1);
-//             System.out.println(y + " : " +list.get(y)+" : "+count_sort.get(list.get(y)));
-            
-//         }
-//         list.clear();
-//         //resorting the array
-//         for(int j=0; j<count_sort.size(); j++){
-//             int counter = count_sort.get(j);
-//             while(counter > 0){
-//                 list.add(j);
-//                 counter--;
-//                 count_sort.set(j,count_sort.get(j)-1);
-//             }
-//         }
-        
-//     }
 }

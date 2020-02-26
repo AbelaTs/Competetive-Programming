@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/minimum-increment-to-make-array-unique/
 class  MinimumIncrementtoMakeArrayUnique{
     public int minIncrementForUnique(int[] A) {
         int count_increment = 0;

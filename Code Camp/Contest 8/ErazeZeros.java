@@ -1,3 +1,4 @@
+//https://codeforces.com/contest/1303/problem/A
 import java.util.Scanner;
 
 public class ErazeZeros{

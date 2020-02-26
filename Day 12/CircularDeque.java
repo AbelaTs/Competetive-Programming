@@ -1,8 +1,11 @@
+//https://leetcode.com/problems/design-circular-deque/
+//Not finished
+import java.util.ArrayList;
 class CircularDeque {
     static int size;
     ArrayList<Integer> queue;
     /** Initialize your data structure here. Set the size of the deque to be k. */
-    public MyCircularDeque(int k) {
+    public CircularDeque(int k) {
       queue = new ArrayList<Integer>();
       size = k;
     }

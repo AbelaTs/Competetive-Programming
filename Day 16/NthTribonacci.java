@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/n-th-tribonacci-number/
 class NthTribonacci {
     public int tribonacci(int n) {
        if(n > 2){ 

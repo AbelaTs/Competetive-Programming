@@ -1,12 +1,13 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
+//https://leetcode.com/problems/longest-univalue-path/
+import java.util.ArrayList;
+//Definition for a binary tree node.
+class TreeNode {
+     int val;
+     TreeNode left;
+     TreeNode right;
+     TreeNode(int x) { val = x; }
+ }
+ 
 class LongestUniValuePath {
     public int longestUnivaluePath(TreeNode root) {
         int largest_counter = 0;

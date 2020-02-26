@@ -1,3 +1,4 @@
+//https://codeforces.com/contest/1265/problem/B
 import java.util.ArrayList;
 import java.util.Scanner;
 public class BeutifulNumber{

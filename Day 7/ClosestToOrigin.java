@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/k-closest-points-to-origin/
 class ClosestToOrigin {
     public static int[][] kClosest(int[][] points, int K) {
         int[][] result = new int[K][2];

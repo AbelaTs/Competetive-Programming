@@ -1,3 +1,4 @@
+//http://codeforces.com/contest/1272/problem/A
 import java.util.Scanner;
 
 public class ThreeFriends {

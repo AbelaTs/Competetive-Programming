@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/daily-temperatures
 public class DailyTempreture {
     public static int[] dailyTemperatures(int[] T) {
         int[] result = new int[T.length];

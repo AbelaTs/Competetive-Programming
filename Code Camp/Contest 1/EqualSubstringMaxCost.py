@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/get-equal-substrings-within-budget/
 class Solution(object):
     def equalSubstring(self, s, t, maxCost):
         costs = []

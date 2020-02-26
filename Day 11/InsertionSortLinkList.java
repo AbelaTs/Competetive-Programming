@@ -1,9 +1,7 @@
+//https://leetcode.com/problems/insertion-sort-list/
 import java.util.ArrayList;
-
-import org.graalvm.compiler.nodes.spi.NodeValueMap;
-
 // Definition for singly-linked list.
- public class ListNode {
+class ListNode {
      int val;
      ListNode next;
      ListNode(int x) { val = x; }

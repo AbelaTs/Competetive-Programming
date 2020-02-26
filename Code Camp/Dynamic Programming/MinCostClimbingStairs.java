@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/min-cost-climbing-stairs/
 class MinCostClimbingStairs {
     public int minCostClimbingStairs(int[] cost) {
         int min_cost;

@@ -1,3 +1,4 @@
+//https://leetcode.com/contest/weekly-contest-88/problems/loud-and-rich
 import java.util.ArrayList;
 import java.util.HashMap;
 

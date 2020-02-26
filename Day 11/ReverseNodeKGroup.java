@@ -1,12 +1,13 @@
+//https://leetcode.com/problems/reverse-nodes-in-k-group/
 import java.util.ArrayList;
 // Definition for singly-linked list.
- public class ListNode {
+class ListNode {
      int val;
      ListNode next;
      ListNode(int x) { val = x; }
  }
  
-public class ReversedNodeKGroup {
+public class ReverseNodeKGroup {
     //Reverses a part of the list starting from the given index
   public static void reverse(int[] list, int index){
       int rounds;

@@ -1,3 +1,4 @@
+//http://codeforces.com/contest/1278/problem/B
 import java.util.Scanner;
 
 public class AB{

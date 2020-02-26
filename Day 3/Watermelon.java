@@ -1,5 +1,6 @@
+//https://codeforces.com/problemset/problem/4/A
 import java.util.Scanner;
-public class watermelon{
+public class Watermelon{
     public static int[] even_list;
     public static int counter = 0;
     public static String check(int weight){

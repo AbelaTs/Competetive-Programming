@@ -1,12 +1,12 @@
-
+//https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 // Definition for singly-linked list.
- public class ListNode {
+class ListNode {
     int val;
     ListNode next;
-    ListNode(int x) { val = x;
+    ListNode(int x) { val = x;}
  }
  
-public class RemoveDuplicatesSortedList {
+class RemoveDuplicatesSortedList {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode start = new ListNode(0);
         ListNode previous = head;
