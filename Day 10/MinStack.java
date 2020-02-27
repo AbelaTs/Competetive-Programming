@@ -1,49 +1,44 @@
 //https://leetcode.com/problems/min-stack/
 import java.util.ArrayList;
-
-public class MinStack {
-
-    ArrayList<Integer> stack;
+class MinStack {
+    ArrayList<State> stack;
+    /** initialize your data structure here. */
     public MinStack() {
-        stack = new ArrayList<Integer>();
-
+        stack = new ArrayList<State>();
     }
     
     public void push(int x) {
-        
-        stack.add(x);
-        
+        if(stack.size() == 0){
+            stack.add(new State(x,x));
+        }else{
+            int prev = stack.get(stack.size()-1).min;
+            if(x < prev){
+                stack.add(new State(x,x));
+            }else{
+                stack.add(new State(x,prev));
+            }
+        }
     }
     
     public void pop() {
-        if(!stack.isEmpty()){
-            stack.remove(stack.size() - 1);
-        }
+        stack.remove(stack.size()-1);
     }
     
     public int top() {
-        if(!stack.isEmpty()){ 
-           
-            return stack.get(stack.size() - 1);
-        }
-        return 0;
+        return stack.get(stack.size()-1).self;
     }
-   
     
     public int getMin() {
-        if(!stack.isEmpty()){
-            int min = stack.get(stack.size() - 1);
-            for(int x = stack.size() -1; x >= 0; x--){
-                if(stack.get(x) <= min){
-                    min = stack.get(x);
-                }
-            }
-            return min;
-        }
-        return 0;
-        
+        return stack.get(stack.size()-1).min;
     }
-
+}
+class State{
+    int self;
+    int min;
+    public State(int val,int mn){
+        self = val;
+        min = mn;
+    }
 }
 
 /**
