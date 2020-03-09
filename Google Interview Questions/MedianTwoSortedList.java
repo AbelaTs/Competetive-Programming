@@ -16,9 +16,9 @@ class Solution {
             int nums1Mid = (left + right)/2;
             int nums2Mid = half - (nums1Mid);
             if(nums1Mid > left &&  nums1[nums1Mid-1] > nums2[nums2Mid]){
-                right = nums1Mid-1;
+                right = nums1Mid-1;//move to the left
             }else if(nums1Mid < right && nums2[nums2Mid-1] > nums1[nums1Mid]){
-                left = nums1Mid+1;//move to the left
+                left = nums1Mid+1;//move to the right
             }else{
                 //if two half are equal and median is found
                 double leftMax = 0.0;
