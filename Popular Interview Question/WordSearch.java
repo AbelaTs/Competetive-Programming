@@ -1,6 +1,5 @@
 import java.util.HashSet;
 
-
 class WordSearch {
     public boolean exist(char[][] board, String word) {
         HashSet<String> seen = new HashSet<String>();
