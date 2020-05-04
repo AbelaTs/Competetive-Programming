@@ -4,7 +4,7 @@ class LargestPerimeter {
     public static int largestPerimeter(int[] A) {
         int perimeter = 0;
         double area;
-       //sorting the list in increasing order
+       //sorting the list in decreasing order
         for(int i = 1; i<A.length; i++){
             int counter = i;
             while(counter > 0){
@@ -37,7 +37,7 @@ class LargestPerimeter {
                         }
                     }
                     pointer++;
-            }
+                }
                 
         }
        return perimeter;
