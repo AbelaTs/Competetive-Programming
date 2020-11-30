@@ -1,21 +1,53 @@
 //https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 class Solution {
-    public int maxScore(int[] cardPoints, int k) {
-        int[] leftSum = new int[k+1];
-        int[] rightSum = new int[k+1];
-        int maxSc = 0;
-        for(int index = 0; index < k; index++){
-            leftSum[index+1] = cardPoints[index] + leftSum[index];           
+    public boolean isSymmetric(TreeNode root) {
+        // if(root == null){
+        //     return true;
+        // }
+        // return checkSymmetry(root,root);
+        //Iterative
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        queue.add(root);
+        while(queue.size() != 0){
+            TreeNode leftRoot = queue.remove();
+            TreeNode rightRoot = queue.remove();
+            if(leftRoot == null && rightRoot != null || leftRoot != null && rightRoot == null){
+                return false;
+            }else if(rightRoot != null && leftRoot != null &&leftRoot.val != rightRoot.val){
+                return false;
+            }else if(rightRoot != null && leftRoot != null){
+                queue.add(leftRoot.left);
+                queue.add(rightRoot.right);
+                queue.add(leftRoot.right);
+                queue.add(rightRoot.left);
+            }
+            
         }
-        for(int index = 0; index < k; index++){
-            int rightMost = k - index - 1;
-            int pointerRight = cardPoints.length - index -1;
-            rightSum[rightMost] = cardPoints[pointerRight] + rightSum[rightMost+1];
+        return true;
+    }
+    //recursive
+    public boolean checkSymmetry(TreeNode leftRoot, TreeNode rightRoot){
+        if(leftRoot == null && rightRoot == null){
+            return true;
+        }else if(leftRoot!= null && rightRoot != null){
+            return leftRoot.val == rightRoot.val && checkSymmetry(leftRoot.left,rightRoot.right) && checkSymmetry(rightRoot.left,leftRoot.right);
         }
-        for(int index = 0; index < leftSum.length; index++){
-            maxSc = Math.max(maxSc,leftSum[index]+rightSum[index]);
-        }
-        
-        return maxSc;
+        return false;
     }
 }
