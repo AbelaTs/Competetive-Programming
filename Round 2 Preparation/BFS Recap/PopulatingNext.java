@@ -27,6 +27,7 @@ class Solution {
         if(root == null){
             return null;
         }
+        //goBFS(root);
         LinkedList<Node> queue = new LinkedList<>();
         root.next = null;
         queue.add(root);
@@ -43,5 +44,16 @@ class Solution {
         }
         return root;
         
+    }
+    //go recursive
+    public void goBFS(Node root){
+        if(root.left != null){
+            root.left.next = root.right;
+            if(root.next != null){
+                root.right.next = root.next.left;
+            }
+            goBFS(root.left);
+            goBFS(root.right);
+        }
     }
 }
