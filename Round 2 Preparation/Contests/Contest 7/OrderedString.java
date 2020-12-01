@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 //https://leetcode.com/contest/weekly-contest-215/problems/design-an-ordered-stream/
 class OrderedStream {
     String[] valueList;
